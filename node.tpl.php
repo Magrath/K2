@@ -7,7 +7,7 @@
     <div class="entry-meta">
 		<?php if ($submitted): ?><span class="meta-start">Published</span> <div class="entry-author"><span class="meta-prep">by</span> <address class="vcard author"><?php print $name; ?></address></div> <div class="entry-date"><span class="meta-prep">on</span> <abbr class="published" title="<?php print format_date($node->created)?>"><?php print format_date($node->created)?></abbr></div><?php endif; ?> <?php if (count($taxonomy)): ?><div class="entry-categories"><span class="meta-prep"><?php print t(' in')?></span><?php print $terms; ?></div><?php endif; ?>
       <?php if ($links): ?><?php print $links; ?><?php endif; ?>
-	  <?php if ( node_access('update', $node) ) { ?><span class="entry-edit"><a href="/node/<?php print $node->nid ?>/edit" title="Edit post">Edit</a></span><?php }; ?>
+	  <?php if ( node_access('update', $node) ) { ?><span class="entry-edit"><a href="<?php print url('node/'.$node->nid.'/edit') ?>" title="Edit post">Edit</a></span><?php }; ?>
     </div> <!-- .entry-meta -->
     <?php if ($picture) { print $picture; }?> 
   </div> <!-- .entry-head -->
